@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output, OnInit, Input } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, tap } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+import { Country } from '../../interfaces/country.interface';
 
 @Component({
   selector: 'app-country-input',
@@ -14,8 +15,8 @@ export class CountryInputComponent implements OnInit {
   @Output() public onDebounce : EventEmitter<string> = new EventEmitter();
   @Input()  public placeholder: string = '';
   
-  public termino: string = '';
-  public debounce: Subject<string> = new Subject();
+  public termino    : string = '';
+  public debounce   : Subject<string> = new Subject();
   
   ngOnInit() {
     this.debounce

@@ -24,7 +24,7 @@ export class ShowCountryComponent implements OnInit {
 
     this.activatedRoute.params
       .pipe(
-        switchMap( ({ id }) => this.paisService.buscarPaisporAlpha( id ) ),
+        switchMap( ({ id }) => this.paisService.searchByAlpha( id ) ),
         tap( resp => console.log(resp) )
       )
       .subscribe( 

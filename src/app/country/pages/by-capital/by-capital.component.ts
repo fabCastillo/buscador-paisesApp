@@ -22,7 +22,7 @@ export class ByCapitalComponent implements OnInit {
 
   public search( termino: string ): void {
     this.existError = false;
-    this.paisService.buscarCapital( termino )
+    this.paisService.searchByCapital( termino )
       .subscribe(
         countries => {
           this.countries = countries;
@@ -36,7 +36,6 @@ export class ByCapitalComponent implements OnInit {
 
   public sugerencias( termino: string ) {
     this.existError = false;
-    console.log( termino );
   }
 
 }
